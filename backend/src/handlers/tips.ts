@@ -1,6 +1,9 @@
+import { createRequire } from 'node:module'
 import type { Tips } from '../../../shared/types'
-import tips from '../../data/tips.json'
+
+// See catalog.ts for why this is require() and not a JSON import.
+const require = createRequire(import.meta.url)
 
 export function getTips(): Tips {
-  return tips as unknown as Tips
+  return require('../../data/tips.json') as Tips
 }

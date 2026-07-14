@@ -19,6 +19,17 @@ createServer((req, res) => {
 
   res.writeHead(200, { 'content-type': 'application/json' })
   res.end(JSON.stringify(handler()))
-}).listen(PORT, () => {
-  console.log(`tokenwise api ready on http://localhost:${PORT}`)
 })
+  .once('error', (error: NodeJS.ErrnoException) => {
+    if (error.code === 'EADDRINUSE') {
+      console.error(
+        `Port ${PORT} is already in use — is another \`npm run dev\` still running? ` +
+          `Stop it (or \`kill $(lsof -ti :${PORT})\`) and try again.`,
+      )
+      process.exit(1)
+    }
+    throw error
+  })
+  .listen(PORT, () => {
+    console.log(`tokenwise api ready on http://localhost:${PORT}`)
+  })

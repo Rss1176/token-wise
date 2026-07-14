@@ -8,6 +8,9 @@ export default defineConfig({
   root: fileURLToPath(new URL('.', import.meta.url)),
   plugins: [react()],
   server: {
+    // fail loudly if 5173 is taken instead of silently moving to another port
+    port: 5173,
+    strictPort: true,
     proxy: {
       // The local stand-in for the Vercel functions (backend/src/dev-server.ts)
       '/api': 'http://localhost:3001',
