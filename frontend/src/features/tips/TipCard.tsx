@@ -14,7 +14,7 @@ export function TipCard({ tip, index }: TipCardProps) {
   return (
     <article
       className={tint ? `sticky ${tint}` : 'sticky'}
-      style={{ '--tilt': `${index % 2 ? 0.7 : -0.8}deg` } as CSSProperties}
+      style={{ '--tilt': `${index % 2 ? 0.35 : -0.4}deg` } as CSSProperties}
     >
       <p className="tip__tag">
         <span className="tag">{tip.category}</span>

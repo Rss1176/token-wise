@@ -26,11 +26,12 @@
 }
 
 .chip {
-  font-family: var(--font-hand);
-  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
   background: var(--paper);
   color: var(--ink);
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--ink);
   border-radius: var(--wobble-c);
   padding: 0.35rem 1rem;
   cursor: pointer;
@@ -91,8 +92,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-family: var(--font-hand);
-  font-size: 1.05rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
   color: var(--ink-soft);
 }
 
@@ -124,9 +126,9 @@
 
 .meter__block {
   width: 15px;
-  height: 11px;
+  height: 10px;
   border: 1.5px solid var(--ink);
-  border-radius: 3px 6px 4px 7px / 6px 3px 7px 4px;
+  border-radius: 3px 4px 3px 4px / 4px 3px 4px 3px;
   background: transparent;
 }
 

@@ -34,7 +34,6 @@ const categories: Category[] = [
   {
     id: 'coding',
     label: 'Coding',
-    icon: '⌨️',
     keywords: ['programming', 'software'],
     subcases: [
       { id: 'bug-fixing', label: 'Bug fixing', keywords: ['debugging', 'errors'], picks: [] },
@@ -44,7 +43,6 @@ const categories: Category[] = [
   {
     id: 'writing',
     label: 'Writing',
-    icon: '✍️',
     keywords: ['content', 'copy'],
     subcases: [
       { id: 'emails', label: 'Emails & messages', keywords: ['email', 'reply'], picks: [] },

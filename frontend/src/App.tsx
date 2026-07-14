@@ -4,7 +4,7 @@ import { fetchAppData } from './lib/api'
 import { buildModelIndex } from './lib/catalog'
 import { PaperPlane } from './components/PaperPlane'
 import { Skyline } from './components/Skyline'
-import { SearchBox } from './features/search/SearchBox'
+import { ANY_PROVIDER, SearchBox } from './features/search/SearchBox'
 import type { Selection } from './features/search/SearchBox'
 import { PicksPanel } from './features/recommendations/PicksPanel'
 import { CatalogSection } from './features/catalog/CatalogSection'
@@ -17,6 +17,7 @@ export default function App() {
   const [failed, setFailed] = useState(false)
   const [attempt, setAttempt] = useState(0)
   const [selection, setSelection] = useState<Selection | null>(null)
+  const [providerFilter, setProviderFilter] = useState(ANY_PROVIDER)
 
   useEffect(() => {
     let cancelled = false
@@ -42,7 +43,7 @@ export default function App() {
   if (failed) {
     return (
       <div className="status-note paper-card">
-        <p>The paper plane got lost — couldn’t load the data.</p>
+        <p>Couldn’t load the model data.</p>
         <p style={{ marginTop: '1rem' }}>
           <button type="button" className="chip" onClick={retry}>
             try again
@@ -53,8 +54,13 @@ export default function App() {
   }
 
   if (!data || !modelIndex) {
-    return <div className="status-note">unfolding the map…</div>
+    return <div className="status-note">loading…</div>
   }
+
+  const filteredProvider =
+    providerFilter === ANY_PROVIDER
+      ? null
+      : (data.catalog.providers.find((p) => p.id === providerFilter) ?? null)
 
   return (
     <>
@@ -72,22 +78,24 @@ export default function App() {
           <p className="hero__tagline">the right model for the job — before you spend the tokens</p>
           <SearchBox
             categories={data.useCases.categories}
+            providers={data.catalog.providers}
             selection={selection}
+            providerFilter={providerFilter}
+            onProviderChange={setProviderFilter}
             onSelect={setSelection}
           />
         </div>
         <Skyline />
       </header>
 
-      {selection && <PicksPanel selection={selection} modelIndex={modelIndex} />}
+      {selection && (
+        <PicksPanel selection={selection} provider={filteredProvider} modelIndex={modelIndex} />
+      )}
 
       <CatalogSection catalog={data.catalog} />
       <TipsWall tips={data.tips} />
 
       <footer className="footer container">
-        <p className="plane-divider" aria-hidden="true">
-          ✈ · · · · · ·
-        </p>
         <p>
           TokenWise is <a href={REPO_URL}>open source</a>. Picks are curated opinions, not
           benchmarks — <a href={`${REPO_URL}/blob/main/CONTRIBUTING.md`}>PRs welcome</a>.

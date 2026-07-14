@@ -22,10 +22,10 @@
   --font-hand: 'Patrick Hand', 'Segoe Print', cursive;
   --font-body: 'Nunito', 'Trebuchet MS', sans-serif;
 
-  /* the classic hand-drawn border trick: asymmetric radii look sketched */
-  --wobble-a: 255px 15px 225px 15px / 15px 225px 15px 255px;
-  --wobble-b: 15px 225px 15px 255px / 225px 15px 255px 15px;
-  --wobble-c: 125px 10px 20px 185px / 25px 205px 205px 25px;
+  /* slightly asymmetric radii keep a hand-cut paper feel without going cartoony */
+  --wobble-a: 16px 9px 14px 10px / 10px 15px 9px 16px;
+  --wobble-b: 9px 15px 10px 16px / 15px 9px 16px 10px;
+  --wobble-c: 12px 7px 10px 8px / 8px 11px 7px 12px;
 
   --shadow-paper: 0 2px 0 rgba(46, 74, 84, 0.14), 0 8px 18px rgba(46, 74, 84, 0.1);
   --shadow-lifted: 0 3px 0 rgba(46, 74, 84, 0.16), 0 12px 24px rgba(46, 74, 84, 0.14);

@@ -1,25 +1,23 @@
 import type { CSSProperties } from 'react'
-import type { ModelPick, PickRole } from '../../../../shared/types'
-import type { ModelEntry } from '../../lib/catalog'
+import type { PickRole } from '../../../../shared/types'
+import type { ResolvedPick } from '../../lib/picks'
 import { formatContext, formatPricing } from '../../lib/catalog'
 import { MeterStack } from '../../components/Meter'
 import { ProviderBadge } from '../../components/ProviderBadge'
 
-const ROLE_META: Record<PickRole, { title: string; emoji: string }> = {
-  best: { title: 'Best overall', emoji: '🏆' },
-  budget: { title: 'Budget pick', emoji: '🪙' },
-  fastest: { title: 'Fastest', emoji: '⚡' },
+const ROLE_LABEL: Record<PickRole, string> = {
+  best: 'Best overall',
+  budget: 'Budget pick',
+  fastest: 'Fastest',
 }
 
 interface PickCardProps {
-  pick: ModelPick
-  entry: ModelEntry
+  pick: ResolvedPick
   index: number
 }
 
-export function PickCard({ pick, entry, index }: PickCardProps) {
-  const { model, provider } = entry
-  const meta = ROLE_META[pick.role]
+export function PickCard({ pick, index }: PickCardProps) {
+  const { model, provider } = pick.entry
   const context = formatContext(model.context)
 
   return (
@@ -28,13 +26,11 @@ export function PickCard({ pick, entry, index }: PickCardProps) {
       style={
         {
           animationDelay: `${index * 120}ms`,
-          '--tilt': index % 2 ? '0.5deg' : '-0.6deg',
+          '--tilt': index % 2 ? '0.2deg' : '-0.25deg',
         } as CSSProperties
       }
     >
-      <p className="pick-card__role">
-        {meta.emoji} {meta.title}
-      </p>
+      <p className="pick-card__role">{pick.roles.map((role) => ROLE_LABEL[role]).join(' · ')}</p>
       <h3 className="pick-card__model">{model.name}</h3>
       <ProviderBadge provider={provider} />
       <p className="pick-card__why">{pick.why}</p>

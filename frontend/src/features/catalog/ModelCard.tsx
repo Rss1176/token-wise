@@ -17,7 +17,7 @@ export function ModelCard({ model, index }: ModelCardProps) {
       style={
         {
           animationDelay: `${index * 90}ms`,
-          '--tilt': index % 2 ? '0.4deg' : '-0.5deg',
+          '--tilt': index % 2 ? '0.15deg' : '-0.2deg',
         } as CSSProperties
       }
     >

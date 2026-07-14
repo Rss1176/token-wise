@@ -3,7 +3,6 @@
     {
       "id": "coding",
       "label": "Coding",
-      "icon": "⌨️",
       "keywords": ["programming", "development", "software", "code", "engineering", "developer"],
       "subcases": [
         {
@@ -165,7 +164,6 @@
     {
       "id": "writing",
       "label": "Writing",
-      "icon": "✍️",
       "keywords": ["content", "copy", "blog", "prose", "text", "author"],
       "subcases": [
         {
@@ -283,7 +281,6 @@
     {
       "id": "research",
       "label": "Research & analysis",
-      "icon": "🔍",
       "keywords": ["analysis", "investigate", "study", "insights", "reports"],
       "subcases": [
         {
@@ -379,7 +376,6 @@
     {
       "id": "chat",
       "label": "Chat & everyday",
-      "icon": "💬",
       "keywords": ["conversation", "questions", "assistant", "help", "daily"],
       "subcases": [
         {
@@ -475,7 +471,6 @@
     {
       "id": "agents",
       "label": "Agents & automation",
-      "icon": "🤖",
       "keywords": ["automation", "pipelines", "bots", "workflows", "autonomous"],
       "subcases": [
         {
@@ -571,7 +566,6 @@
     {
       "id": "vision",
       "label": "Vision & documents",
-      "icon": "🖼️",
       "keywords": ["images", "pictures", "pdf", "screenshots", "photos", "multimodal"],
       "subcases": [
         {
@@ -667,7 +661,6 @@
     {
       "id": "math",
       "label": "Math & reasoning",
-      "icon": "🧮",
       "keywords": ["mathematics", "logic", "proofs", "calculation", "problem solving"],
       "subcases": [
         {
@@ -741,7 +734,6 @@
     {
       "id": "translation",
       "label": "Translation & language",
-      "icon": "🌍",
       "keywords": ["translate", "languages", "localization", "multilingual"],
       "subcases": [
         {

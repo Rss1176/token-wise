@@ -68,7 +68,6 @@ export interface Subcase {
 export interface Category {
   id: string
   label: string
-  icon: string
   keywords: string[]
   subcases: Subcase[]
 }

@@ -12,7 +12,7 @@
 .hero__title {
   font-size: clamp(3.2rem, 9vw, 5.2rem);
   letter-spacing: 0.02em;
-  transform: rotate(-1.2deg);
+  transform: rotate(-0.6deg);
 }
 
 .hero__title .accent {
@@ -24,7 +24,6 @@
   font-size: clamp(1.15rem, 3vw, 1.5rem);
   color: var(--ink-faint);
   margin: 0.5rem 0 2.4rem;
-  transform: rotate(-0.4deg);
 }
 
 .hero .plane {
@@ -73,28 +72,59 @@
   left: 0;
   width: 100%;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.35;
 }
 
 /* ---------- search ---------- */
 
 .search {
   position: relative;
-  max-width: 34rem;
+  max-width: 36rem;
   margin: 0 auto;
   text-align: left;
 }
 
-.search__input {
-  width: 100%;
-  font-family: var(--font-hand);
-  font-size: 1.35rem;
-  color: var(--ink);
+.search__bar {
+  display: flex;
+  align-items: stretch;
   background: var(--paper);
-  border: 2.5px solid var(--ink);
+  border: 2px solid var(--ink);
   border-radius: var(--wobble-c);
   box-shadow: var(--shadow-lifted);
-  padding: 0.75rem 1.2rem;
+  overflow: hidden;
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  padding: 0.8rem 1.1rem;
+}
+
+.search__input:focus-visible {
+  outline: none;
+}
+
+.search__bar:focus-within {
+  outline: 3px dashed var(--orange);
+  outline-offset: 2px;
+}
+
+.search__provider {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  background: var(--paper-shade);
+  border: none;
+  border-left: 2px dashed rgba(46, 74, 84, 0.35);
+  padding: 0 0.8rem;
+  cursor: pointer;
+  max-width: 10.5rem;
 }
 
 .search__input::placeholder {
@@ -102,11 +132,10 @@
 }
 
 .search__hint {
-  font-family: var(--font-hand);
+  font-family: var(--font-body);
   color: var(--ink-faint);
   margin: 0.9rem 0 0.55rem;
-  font-size: 1.05rem;
-  transform: rotate(-0.5deg);
+  font-size: 0.92rem;
 }
 
 .search__suggestions {
@@ -128,10 +157,11 @@
   text-align: left;
   background: none;
   border: none;
-  border-radius: 10px 4px 12px 5px / 5px 11px 4px 12px;
-  padding: 0.45rem 0.8rem;
-  font-family: var(--font-hand);
-  font-size: 1.15rem;
+  border-radius: 8px 5px 9px 6px / 6px 8px 5px 9px;
+  padding: 0.5rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -147,7 +177,8 @@
 }
 
 .search__empty {
-  font-family: var(--font-hand);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   color: var(--ink-faint);
   padding: 0.6rem 0.8rem;
 }
@@ -162,8 +193,11 @@
 }
 
 .pick-card__role {
-  font-family: var(--font-hand);
-  font-size: 1.15rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
   color: var(--orange);
   margin-bottom: 0.3rem;
 }
