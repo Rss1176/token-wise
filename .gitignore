@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# builds
+frontend/dist/
+.vercel/
+
+# logs & OS noise
+*.log
+.DS_Store
+
+# editor
+.idea/
+*.local

@@ -1,0 +1,103 @@
+{
+  "tips": [
+    {
+      "id": "right-size-model",
+      "title": "Right-size the model",
+      "body": "The single biggest lever. Prices differ 50x or more between flagship and budget tiers, and most everyday tasks don't need a frontier model. Try one tier down — if quality holds, keep going down until it doesn't.",
+      "category": "model-choice"
+    },
+    {
+      "id": "prompt-caching",
+      "title": "Cache your prompt prefix",
+      "body": "Most providers offer prompt caching: repeated content (system prompts, docs, conversation history) is billed at ~10% of the normal input price. Keep stable content at the start of the prompt and volatile content (timestamps, per-request IDs) at the end — one changed byte early in the prompt invalidates everything after it.",
+      "category": "caching"
+    },
+    {
+      "id": "compress-prompts",
+      "title": "Compress your prompts",
+      "body": "Politeness padding, hedging, and restating context all cost tokens on every single call. Say what you want directly — the model doesn't need warming up.",
+      "category": "prompting",
+      "example": {
+        "before": "I was wondering if you could possibly help me out by taking a look at the following text and providing me with a brief summary of the main points contained within it?",
+        "after": "Summarize the main points:",
+        "savings": "~85% fewer prompt tokens"
+      }
+    },
+    {
+      "id": "trim-context",
+      "title": "Send only the context you need",
+      "body": "Don't paste a whole file when the function is enough, or a whole PDF when one section answers the question. Input tokens are billed on every request — including everything the model didn't need.",
+      "category": "context"
+    },
+    {
+      "id": "output-costs-more",
+      "title": "Remember: output costs ~5x input",
+      "body": "Output tokens are typically 5–6x the price of input tokens. Ask for concise answers, set a max output limit, and skip the 'explain your reasoning' unless you'll actually read it.",
+      "category": "output",
+      "example": {
+        "before": "Explain in detail, with examples, all the ways I could fix this bug.",
+        "after": "Give the single best fix for this bug, in one short paragraph.",
+        "savings": "often 3–10x fewer output tokens"
+      }
+    },
+    {
+      "id": "batch-processing",
+      "title": "Use batch APIs for non-urgent work",
+      "body": "Anthropic, OpenAI, and Google all offer batch endpoints at ~50% off in exchange for results within hours instead of seconds. Perfect for nightly jobs, backfills, and bulk labeling.",
+      "category": "model-choice"
+    },
+    {
+      "id": "structured-outputs",
+      "title": "Ask for structure, not prose",
+      "body": "If code will consume the answer, request JSON or a fixed format (most APIs can enforce a schema). Structured answers are shorter than prose, and you skip a second 'now extract the data' call.",
+      "category": "output"
+    },
+    {
+      "id": "effort-controls",
+      "title": "Turn the reasoning dial down",
+      "body": "Reasoning models let you control thinking depth (effort levels, thinking budgets). High effort on a simple task burns tokens on deliberation you don't need — reserve deep thinking for problems that deserve it.",
+      "category": "model-choice"
+    },
+    {
+      "id": "draft-cheap-polish-expensive",
+      "title": "Draft cheap, polish expensive",
+      "body": "Use a budget model for the messy exploratory phase — brainstorming, first drafts, bulk generation — then hand only the survivors to a frontier model for the final pass.",
+      "category": "model-choice"
+    },
+    {
+      "id": "system-prompt-audit",
+      "title": "Audit your system prompt",
+      "body": "Every request pays for the whole system prompt. If it's grown to thousands of tokens of rules and examples, prune it: remove instructions the model already follows and examples that stopped earning their keep.",
+      "category": "prompting"
+    },
+    {
+      "id": "summarize-history",
+      "title": "Don't resend the whole conversation",
+      "body": "Chat APIs are stateless — you resend the history each turn, so a long conversation gets more expensive every message. Summarize older turns, or start a fresh conversation once the useful context fits in a paragraph.",
+      "category": "context"
+    },
+    {
+      "id": "minimal-few-shot",
+      "title": "Use the minimum few-shot examples",
+      "body": "One well-chosen example often teaches as much as five. Each example rides along on every request, so test how few you can get away with.",
+      "category": "prompting"
+    },
+    {
+      "id": "retrieval-not-stuffing",
+      "title": "Retrieve, don't stuff",
+      "body": "Instead of putting your entire knowledge base in the prompt, retrieve the handful of relevant chunks per question (RAG). The model reads 2K tokens instead of 200K — and usually answers better, too.",
+      "category": "context"
+    },
+    {
+      "id": "answer-only",
+      "title": "Say 'answer only' when you mean it",
+      "body": "Models love a preamble ('Great question! Let's break this down…'). For lookups and quick facts, ask for the answer only — you'll cut output tokens and read faster.",
+      "category": "output",
+      "example": {
+        "before": "What's the capital of Australia?",
+        "after": "What's the capital of Australia? Answer with just the city name.",
+        "savings": "one word instead of a paragraph"
+      }
+    }
+  ]
+}

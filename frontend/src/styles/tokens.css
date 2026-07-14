@@ -1,0 +1,34 @@
+/* Design tokens — the palette comes from a paper-collage travel poster:
+   sage sky, slate-blue ink, mustard, burnt orange, cream paper, muted red. */
+
+:root {
+  --sky: #cde0dc;
+  --sky-deep: #bdd4cf;
+  --cloud: #f7f5ee;
+
+  --paper: #f5f0e3;
+  --paper-shade: #eae3d0;
+
+  --ink: #2e4a54; /* dark slate for body text (keeps contrast accessible) */
+  --ink-soft: #4e7a8a; /* the poster's slate blue, for headings/accents */
+  --ink-faint: #6e8f9c;
+
+  --mustard: #e0b94f;
+  --mustard-soft: #f0dfa8;
+  --orange: #d97e32;
+  --orange-soft: #edcfae;
+  --red: #c5473f;
+
+  --font-hand: 'Patrick Hand', 'Segoe Print', cursive;
+  --font-body: 'Nunito', 'Trebuchet MS', sans-serif;
+
+  /* the classic hand-drawn border trick: asymmetric radii look sketched */
+  --wobble-a: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --wobble-b: 15px 225px 15px 255px / 225px 15px 255px 15px;
+  --wobble-c: 125px 10px 20px 185px / 25px 205px 205px 25px;
+
+  --shadow-paper: 0 2px 0 rgba(46, 74, 84, 0.14), 0 8px 18px rgba(46, 74, 84, 0.1);
+  --shadow-lifted: 0 3px 0 rgba(46, 74, 84, 0.16), 0 12px 24px rgba(46, 74, 84, 0.14);
+
+  --maxw: 62rem;
+}

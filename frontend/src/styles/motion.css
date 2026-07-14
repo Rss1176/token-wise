@@ -1,0 +1,90 @@
+/* All motion runs on steps() — animated "on twos/threes" like paper stop-motion.
+   Every animation is disabled under prefers-reduced-motion. */
+
+@keyframes stamp-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.18) rotate(2deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.95) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(var(--tilt, 0deg));
+  }
+}
+
+.stamp-in {
+  animation: stamp-in 0.4s steps(3, end) both;
+}
+
+@keyframes wobble {
+  0% {
+    transform: rotate(-0.8deg) translateY(0);
+  }
+  50% {
+    transform: rotate(0.9deg) translateY(-2px);
+  }
+  100% {
+    transform: rotate(-0.8deg) translateY(0);
+  }
+}
+
+.wobbly:hover {
+  animation: wobble 0.5s steps(3, end) infinite;
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(-20vw);
+  }
+  100% {
+    transform: translateX(115vw);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-2deg);
+  }
+}
+
+.plane {
+  animation: fly-across 18s steps(54) infinite;
+}
+
+.plane__inner {
+  animation: bob 2.6s steps(4) infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(46px);
+  }
+}
+
+.cloud {
+  animation: drift 7s steps(7) infinite alternate;
+}
+
+.cloud--slow {
+  animation-duration: 11s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

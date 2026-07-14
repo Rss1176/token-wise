@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  background-color: var(--sky);
+  /* halftone dot texture, like printed paper */
+  background-image: radial-gradient(rgba(46, 74, 84, 0.055) 1px, transparent 1px);
+  background-size: 7px 7px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-hand);
+  color: var(--ink-soft);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--ink-soft);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px dashed var(--orange);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--mustard);
+  color: var(--ink);
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading h2 {
+  font-size: 2.2rem;
+}
+
+.section-heading .doodle {
+  flex: 1;
+  border-bottom: 3px dashed rgba(78, 122, 138, 0.4);
+  transform: rotate(-0.4deg);
+}
+
+.section-sub {
+  color: var(--ink-faint);
+  margin-bottom: 1.75rem;
+  max-width: 42rem;
+}
+
+.footer {
+  padding: 3rem 0 4rem;
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 0.95rem;
+}
+
+.footer .plane-divider {
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+.status-note {
+  max-width: 24rem;
+  margin: 6rem auto;
+  text-align: center;
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+}

@@ -1,0 +1,816 @@
+{
+  "categories": [
+    {
+      "id": "coding",
+      "label": "Coding",
+      "icon": "⌨️",
+      "keywords": ["programming", "development", "software", "code", "engineering", "developer"],
+      "subcases": [
+        {
+          "id": "bug-fixing",
+          "label": "Bug fixing",
+          "keywords": ["debugging", "errors", "broken", "crash", "fix", "stack trace"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "State-of-the-art at finding real bugs and explaining the fix clearly."
+            },
+            {
+              "modelId": "deepseek-v4",
+              "role": "budget",
+              "why": "Serious debugging chops for well under a dollar per million tokens."
+            },
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "fastest",
+              "why": "Great for quick, obvious bugs where you just need a second pair of eyes."
+            }
+          ]
+        },
+        {
+          "id": "code-review",
+          "label": "Code review",
+          "keywords": ["pull request", "PR", "review", "feedback", "quality"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "Highest recall and precision on real issues, not nitpicks."
+            },
+            {
+              "modelId": "deepseek-v4",
+              "role": "budget",
+              "why": "Solid reviews on big diffs without the big bill."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Quick sanity-check reviews before you ask a human."
+            }
+          ]
+        },
+        {
+          "id": "ui-building",
+          "label": "UI design & building",
+          "keywords": ["frontend", "interface", "css", "components", "web design", "react"],
+          "picks": [
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "best",
+              "why": "Excellent frontend code and visual taste at a mid-tier price."
+            },
+            {
+              "modelId": "gemini-3-flash",
+              "role": "budget",
+              "why": "Perfectly good for standard components and layout tweaks."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Rapid iteration when you're tweaking styles in a loop."
+            }
+          ]
+        },
+        {
+          "id": "ux-design",
+          "label": "UX design",
+          "keywords": ["user experience", "flows", "wireframes", "usability", "product design"],
+          "picks": [
+            {
+              "modelId": "gpt-5-5",
+              "role": "best",
+              "why": "Strong product thinking — good at flows, edge cases, and copy."
+            },
+            {
+              "modelId": "mistral-large-3",
+              "role": "budget",
+              "why": "Sensible UX feedback and ideation at open-weight prices."
+            },
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "fastest",
+              "why": "Quick gut-checks on a flow or microcopy."
+            }
+          ]
+        },
+        {
+          "id": "refactoring",
+          "label": "Big refactors",
+          "keywords": ["restructure", "migration", "cleanup", "legacy", "codebase"],
+          "picks": [
+            {
+              "modelId": "claude-fable-5",
+              "role": "best",
+              "why": "Built for long-horizon work across huge codebases — 1M-token context."
+            },
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "budget",
+              "why": "Handles most refactors for a third of the flagship price."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Fast mechanical renames and small structural changes."
+            }
+          ]
+        },
+        {
+          "id": "writing-tests",
+          "label": "Writing tests",
+          "keywords": ["unit tests", "testing", "coverage", "TDD", "test suite"],
+          "picks": [
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "best",
+              "why": "Thorough, idiomatic tests that actually exercise edge cases."
+            },
+            {
+              "modelId": "deepseek-v4",
+              "role": "budget",
+              "why": "Churns out solid test suites for next to nothing."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Quick coverage for straightforward functions."
+            }
+          ]
+        },
+        {
+          "id": "quick-scripts",
+          "label": "Quick scripts",
+          "keywords": ["automation", "one-off", "bash", "python script", "snippet"],
+          "picks": [
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "best",
+              "why": "Gets small scripts right first try, with sensible defaults."
+            },
+            {
+              "modelId": "gpt-5-4-nano",
+              "role": "budget",
+              "why": "More than enough for a five-line shell one-liner."
+            },
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "fastest",
+              "why": "Near-instant answers for glue code and small utilities."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing",
+      "label": "Writing",
+      "icon": "✍️",
+      "keywords": ["content", "copy", "blog", "prose", "text", "author"],
+      "subcases": [
+        {
+          "id": "long-form",
+          "label": "Articles & blog posts",
+          "keywords": ["blog", "essay", "article", "newsletter", "long form"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "Clear, warm prose with structure — the least 'AI-sounding' writing."
+            },
+            {
+              "modelId": "mistral-large-3",
+              "role": "budget",
+              "why": "Competent drafts you can shape, at a fraction of the price."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Fast first drafts when you'll heavily edit anyway."
+            }
+          ]
+        },
+        {
+          "id": "marketing-copy",
+          "label": "Marketing copy",
+          "keywords": ["ads", "landing page", "slogans", "social media", "headlines"],
+          "picks": [
+            {
+              "modelId": "gpt-5-5",
+              "role": "best",
+              "why": "Punchy, on-brief copy with strong variant generation."
+            },
+            {
+              "modelId": "gemini-3-flash",
+              "role": "budget",
+              "why": "Plenty of headline variations for pennies."
+            },
+            {
+              "modelId": "grok-4-1-fast",
+              "role": "fastest",
+              "why": "Rapid-fire variants with a current, internet-native voice."
+            }
+          ]
+        },
+        {
+          "id": "editing",
+          "label": "Editing & proofreading",
+          "keywords": ["proofread", "grammar", "polish", "rewrite", "tighten"],
+          "picks": [
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "best",
+              "why": "Respects your voice while tightening the text."
+            },
+            {
+              "modelId": "gpt-5-4-nano",
+              "role": "budget",
+              "why": "Grammar and typo passes are a budget-model job."
+            },
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "fastest",
+              "why": "Instant polish on emails and short passages."
+            }
+          ]
+        },
+        {
+          "id": "creative-fiction",
+          "label": "Creative fiction",
+          "keywords": ["story", "novel", "poetry", "characters", "worldbuilding"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "The strongest sense of voice, character, and narrative structure."
+            },
+            {
+              "modelId": "mistral-large-3",
+              "role": "budget",
+              "why": "Imaginative enough for drafting scenes and brainstorming plots."
+            },
+            {
+              "modelId": "gpt-5-4",
+              "role": "fastest",
+              "why": "Quick scene sketches and dialogue passes."
+            }
+          ]
+        },
+        {
+          "id": "emails",
+          "label": "Emails & messages",
+          "keywords": ["email", "slack", "reply", "message", "professional tone"],
+          "picks": [
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "best",
+              "why": "Emails are short — a fast model does them well and instantly."
+            },
+            {
+              "modelId": "gemini-3-1-flash-lite",
+              "role": "budget",
+              "why": "Effectively free for everyday correspondence."
+            },
+            {
+              "modelId": "gemini-3-1-flash-lite",
+              "role": "fastest",
+              "why": "Snappy replies with zero waiting."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "label": "Research & analysis",
+      "icon": "🔍",
+      "keywords": ["analysis", "investigate", "study", "insights", "reports"],
+      "subcases": [
+        {
+          "id": "summarizing",
+          "label": "Summarizing documents",
+          "keywords": ["summary", "tldr", "digest", "condense", "key points"],
+          "picks": [
+            {
+              "modelId": "gemini-3-1-pro",
+              "role": "best",
+              "why": "Huge context window and strong faithful summarization."
+            },
+            {
+              "modelId": "gemini-3-flash",
+              "role": "budget",
+              "why": "Summaries are its bread and butter, at bargain rates."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Fast digests of long PDFs and transcripts."
+            }
+          ]
+        },
+        {
+          "id": "deep-research",
+          "label": "Deep research",
+          "keywords": ["literature review", "thorough", "multi-source", "synthesis"],
+          "picks": [
+            {
+              "modelId": "claude-fable-5",
+              "role": "best",
+              "why": "Built for long, multi-source research runs that need real synthesis."
+            },
+            {
+              "modelId": "deepseek-v4",
+              "role": "budget",
+              "why": "Strong reasoning over sources without the frontier price tag."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Quick landscape scans before you go deep."
+            }
+          ]
+        },
+        {
+          "id": "data-analysis",
+          "label": "Data analysis",
+          "keywords": ["csv", "statistics", "spreadsheet", "charts", "numbers"],
+          "picks": [
+            {
+              "modelId": "gpt-5-5",
+              "role": "best",
+              "why": "Excellent at working through datasets and generating analysis code."
+            },
+            {
+              "modelId": "deepseek-v4",
+              "role": "budget",
+              "why": "Strong math and code make it a bargain analyst."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Fast passes over tables and simple aggregations."
+            }
+          ]
+        },
+        {
+          "id": "current-events",
+          "label": "Current events & facts",
+          "keywords": ["news", "today", "latest", "real-time", "fact check"],
+          "picks": [
+            {
+              "modelId": "grok-4-20",
+              "role": "best",
+              "why": "Real-time grounding in X and the web — built for 'what's happening now'."
+            },
+            {
+              "modelId": "grok-4-1-fast",
+              "role": "budget",
+              "why": "Same real-time access at a tenth of the price."
+            },
+            {
+              "modelId": "grok-4-1-fast",
+              "role": "fastest",
+              "why": "Quick answers on breaking topics."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chat",
+      "label": "Chat & everyday",
+      "icon": "💬",
+      "keywords": ["conversation", "questions", "assistant", "help", "daily"],
+      "subcases": [
+        {
+          "id": "general-questions",
+          "label": "General questions",
+          "keywords": ["how to", "explain", "what is", "quick answer"],
+          "picks": [
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "best",
+              "why": "Smart, fast, and pleasant — the everyday default."
+            },
+            {
+              "modelId": "gemini-3-1-flash-lite",
+              "role": "budget",
+              "why": "Most everyday questions don't need a frontier model."
+            },
+            {
+              "modelId": "gemini-3-1-flash-lite",
+              "role": "fastest",
+              "why": "Answers before you finish reaching for your coffee."
+            }
+          ]
+        },
+        {
+          "id": "brainstorming",
+          "label": "Brainstorming",
+          "keywords": ["ideas", "ideation", "thinking partner", "options", "creativity"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "A genuine thought partner — pushes back and builds on your ideas."
+            },
+            {
+              "modelId": "mistral-large-3",
+              "role": "budget",
+              "why": "Good divergent thinking at open-weight prices."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Rapid-fire idea lists to get you unstuck."
+            }
+          ]
+        },
+        {
+          "id": "learning",
+          "label": "Learning & tutoring",
+          "keywords": ["teach", "study", "explain like", "tutor", "understand"],
+          "picks": [
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "best",
+              "why": "Patient, structured explanations that adapt to your level."
+            },
+            {
+              "modelId": "gemini-3-flash",
+              "role": "budget",
+              "why": "Great explainers for standard topics, very cheap."
+            },
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "fastest",
+              "why": "Quick clarifications mid-study-session."
+            }
+          ]
+        },
+        {
+          "id": "decisions",
+          "label": "Advice & decisions",
+          "keywords": ["pros and cons", "choose", "compare", "recommendation"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "Weighs trade-offs honestly instead of just validating you."
+            },
+            {
+              "modelId": "gpt-5-4",
+              "role": "budget",
+              "why": "Solid structured comparisons at mid-tier prices."
+            },
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "fastest",
+              "why": "Fast gut-checks on low-stakes choices."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agents",
+      "label": "Agents & automation",
+      "icon": "🤖",
+      "keywords": ["automation", "pipelines", "bots", "workflows", "autonomous"],
+      "subcases": [
+        {
+          "id": "long-agents",
+          "label": "Long-running agents",
+          "keywords": ["autonomous", "multi-step", "overnight", "agentic"],
+          "picks": [
+            {
+              "modelId": "claude-fable-5",
+              "role": "best",
+              "why": "The strongest long-horizon execution — stays coherent for hours."
+            },
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "budget",
+              "why": "Very capable agent work at a third of flagship cost."
+            },
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "fastest",
+              "why": "Ideal for fast subagents doing scoped subtasks."
+            }
+          ]
+        },
+        {
+          "id": "computer-use",
+          "label": "Browser & computer use",
+          "keywords": ["screenshots", "clicking", "browser automation", "GUI"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "High-res vision and precise pointing make it the computer-use leader."
+            },
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "budget",
+              "why": "Strong computer use for routine flows at lower cost."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Quick screen-reading steps in simple automations."
+            }
+          ]
+        },
+        {
+          "id": "support-bots",
+          "label": "Customer support bots",
+          "keywords": ["chatbot", "helpdesk", "FAQ", "customer service"],
+          "picks": [
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "best",
+              "why": "Fast, friendly, and cheap enough to run at support volume."
+            },
+            {
+              "modelId": "gpt-5-4-nano",
+              "role": "budget",
+              "why": "Handles FAQ-style traffic for almost nothing."
+            },
+            {
+              "modelId": "gemini-3-1-flash-lite",
+              "role": "fastest",
+              "why": "Lowest latency for real-time chat widgets."
+            }
+          ]
+        },
+        {
+          "id": "pipelines",
+          "label": "Classification & extraction",
+          "keywords": ["tagging", "labeling", "structured data", "ETL", "batch"],
+          "picks": [
+            {
+              "modelId": "gpt-5-4",
+              "role": "best",
+              "why": "Reliable structured outputs on messy inputs."
+            },
+            {
+              "modelId": "gpt-5-4-nano",
+              "role": "budget",
+              "why": "Purpose-built pricing for high-volume labeling."
+            },
+            {
+              "modelId": "gemini-3-1-flash-lite",
+              "role": "fastest",
+              "why": "Millions of small calls without melting the budget."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vision",
+      "label": "Vision & documents",
+      "icon": "🖼️",
+      "keywords": ["images", "pictures", "pdf", "screenshots", "photos", "multimodal"],
+      "subcases": [
+        {
+          "id": "image-understanding",
+          "label": "Image understanding",
+          "keywords": ["describe image", "photo analysis", "visual", "identify"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "High-resolution vision with pixel-accurate detail reading."
+            },
+            {
+              "modelId": "gemini-3-flash",
+              "role": "budget",
+              "why": "Very good image comprehension at bargain rates."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Snappy multimodal answers on everyday photos."
+            }
+          ]
+        },
+        {
+          "id": "ocr-extraction",
+          "label": "OCR & data extraction",
+          "keywords": ["receipts", "invoices", "scanned", "handwriting", "tables"],
+          "picks": [
+            {
+              "modelId": "gemini-3-1-pro",
+              "role": "best",
+              "why": "Excellent at pulling structured data out of messy scans."
+            },
+            {
+              "modelId": "gemini-3-1-flash-lite",
+              "role": "budget",
+              "why": "Receipt-and-invoice volume work at volume prices."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Fast extraction when documents keep coming."
+            }
+          ]
+        },
+        {
+          "id": "pdf-analysis",
+          "label": "PDF & report analysis",
+          "keywords": ["contracts", "papers", "reports", "documents", "review pdf"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "Careful reading of dense documents, charts, and fine print."
+            },
+            {
+              "modelId": "gemini-3-flash",
+              "role": "budget",
+              "why": "Long PDFs summarized and queried cheaply."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Quick answers from long reports."
+            }
+          ]
+        },
+        {
+          "id": "charts-figures",
+          "label": "Charts & figures",
+          "keywords": ["graphs", "plots", "data viz", "diagrams", "read chart"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "Reads values off charts and verifies figures against the text."
+            },
+            {
+              "modelId": "gemini-3-flash",
+              "role": "budget",
+              "why": "Good chart comprehension for everyday dashboards."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Fast reads on simple graphs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "math",
+      "label": "Math & reasoning",
+      "icon": "🧮",
+      "keywords": ["mathematics", "logic", "proofs", "calculation", "problem solving"],
+      "subcases": [
+        {
+          "id": "hard-problems",
+          "label": "Hard problems",
+          "keywords": ["competition math", "proofs", "research", "complex"],
+          "picks": [
+            {
+              "modelId": "claude-fable-5",
+              "role": "best",
+              "why": "The deepest reasoner — for problems other models get wrong."
+            },
+            {
+              "modelId": "deepseek-v4",
+              "role": "budget",
+              "why": "Famous for math ability far above its price class."
+            },
+            {
+              "modelId": "gpt-5-5",
+              "role": "fastest",
+              "why": "Strong reasoning with snappier turnaround than the deep thinkers."
+            }
+          ]
+        },
+        {
+          "id": "homework",
+          "label": "Step-by-step homework",
+          "keywords": ["show work", "solve", "algebra", "calculus", "physics"],
+          "picks": [
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "best",
+              "why": "Clear worked solutions that teach rather than just answer."
+            },
+            {
+              "modelId": "deepseek-v4",
+              "role": "budget",
+              "why": "Reliable step-by-step math for pennies."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Quick checks on practice problems."
+            }
+          ]
+        },
+        {
+          "id": "logic-puzzles",
+          "label": "Logic & puzzles",
+          "keywords": ["riddles", "constraints", "brain teasers", "deduction"],
+          "picks": [
+            {
+              "modelId": "gpt-5-5",
+              "role": "best",
+              "why": "Methodical constraint-tracking on tricky puzzles."
+            },
+            {
+              "modelId": "deepseek-v4",
+              "role": "budget",
+              "why": "Punches way above its weight on logic."
+            },
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "fastest",
+              "why": "Fast and usually right on everyday puzzles."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "translation",
+      "label": "Translation & language",
+      "icon": "🌍",
+      "keywords": ["translate", "languages", "localization", "multilingual"],
+      "subcases": [
+        {
+          "id": "document-translation",
+          "label": "Document translation",
+          "keywords": ["translate document", "formal", "accurate translation"],
+          "picks": [
+            {
+              "modelId": "gpt-5-5",
+              "role": "best",
+              "why": "Consistently accurate across major and minor language pairs."
+            },
+            {
+              "modelId": "gemini-3-flash",
+              "role": "budget",
+              "why": "High-quality translation at bulk-friendly prices."
+            },
+            {
+              "modelId": "gemini-3-5-flash",
+              "role": "fastest",
+              "why": "Fast turnaround on long documents."
+            }
+          ]
+        },
+        {
+          "id": "conversational",
+          "label": "Conversational translation",
+          "keywords": ["chat translation", "casual", "messages", "real-time"],
+          "picks": [
+            {
+              "modelId": "claude-haiku-4-5",
+              "role": "best",
+              "why": "Natural, colloquial phrasing with instant responses."
+            },
+            {
+              "modelId": "gemini-3-1-flash-lite",
+              "role": "budget",
+              "why": "Everyday phrases translated for next to nothing."
+            },
+            {
+              "modelId": "gemini-3-1-flash-lite",
+              "role": "fastest",
+              "why": "Real-time speed for live conversations."
+            }
+          ]
+        },
+        {
+          "id": "localization",
+          "label": "Tone & localization",
+          "keywords": ["cultural", "adapt", "idioms", "marketing translation"],
+          "picks": [
+            {
+              "modelId": "claude-opus-4-8",
+              "role": "best",
+              "why": "Adapts tone and idiom rather than translating word-for-word."
+            },
+            {
+              "modelId": "mistral-large-3",
+              "role": "budget",
+              "why": "Particularly strong in European languages."
+            },
+            {
+              "modelId": "claude-sonnet-5",
+              "role": "fastest",
+              "why": "Quality localization passes without flagship latency."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
